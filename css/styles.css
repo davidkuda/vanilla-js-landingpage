@@ -11,8 +11,7 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: linear-gradient(0deg, #b0bec5, #607d8b);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
@@ -34,7 +33,7 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid #cc1;
+    border-bottom: 1px solid #fff;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
     color: #fff;
@@ -194,8 +193,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, #607d8b, #b0bec5);
 }
 
 section.your-active-class .landing__container::before {
