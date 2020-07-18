@@ -1,3 +1,5 @@
+@import "css-modules/loader.css";
+
 /*
  *
  * CSS written based on SMACSS architecture.
@@ -11,10 +13,10 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: linear-gradient(0deg, #b0bec5, #607d8b);
+    background-color: #fff;
     margin: 0;
     font-family: 'Merriweather', serif;
-    color: #fff;
+    color: #b0bec5;
 }
 
 
@@ -23,6 +25,7 @@ h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
+    color: #607d8b;
 }
 
 @media only screen and (min-width: 35em){
@@ -33,15 +36,15 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #b0bec5;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #fff;
+    color: #b0bec5;
 }
 
 p {
     line-height: 1.6em;
-    color: #eee;
+    color: #b0bec5;
 }
 
 /* ---- Layout Rules ---- */
@@ -89,11 +92,15 @@ section {
 
 /* Header Styles */
 .page__header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     background: #fff;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+    height: 10vh;
 }
 
 /* Footer Styles */
@@ -192,8 +199,13 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
-    background: linear-gradient(0deg, #607d8b, #b0bec5);
+section.your-active-class div {
+    background: linear-gradient(0deg, #b0bec5, #607d8b);
+}
+
+section.your-active-class p,
+section.your-active-class h2 {
+    color: #fff;
 }
 
 section.your-active-class .landing__container::before {

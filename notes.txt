@@ -1,0 +1,12 @@
+Sample Projects:
+
+https://github.com/stefanfeldner/landing-page 
+https://stefanfeldner.github.io/landing-page/
+
+
+https://github.com/dianarrugea/dianarrugea.github.io
+https://dianarrugea.github.io/
+
+
+https://github.com/Candidemile/Udacity_Landing_Page
+https://trusting-brahmagupta-6eaafc.netlify.app/
