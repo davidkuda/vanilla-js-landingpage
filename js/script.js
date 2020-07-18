@@ -90,19 +90,12 @@ window.addEventListener('scroll', () => {
 
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    if (scrollTop + clientHeight >= scrollHeight - 10) {
+    if (scrollTop + clientHeight >= scrollHeight - 100) {
         showLoading();
     };
 });
 
 // check if section is active (in viewport and closest to top)
 
-// scroll rather than jump to anchors
-
-// header
-
-// automatically append a new section once user scrolls to the bottom of the page
 
 // go to begin button
-
-// detect bottom scroll position and add a new page

@@ -12,8 +12,13 @@
 
 
 /* ---- Base Rules ---- */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #fff;
+    background-color: #000;
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #b0bec5;
@@ -25,13 +30,16 @@ h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
-    color: #607d8b;
+    background-color: #607d8b;
+    color: #fff;
+    padding: 10px;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
+        padding: 10px;
     }
 }
 
