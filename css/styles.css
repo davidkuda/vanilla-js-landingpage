@@ -24,6 +24,15 @@ body {
     color: #b0bec5;
 }
 
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
 
 /* Typeography General*/
 h1 {
@@ -75,6 +84,13 @@ section {
 
 /* Navigation Styles*/
 
+.navbar__menu {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar__menu li {
     display: inline-block;
 }
@@ -92,16 +108,38 @@ section {
 
 /* Header Styles */
 .page__header {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
     background: #000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
     min-height: 10vh;
+}
+
+.theme-selector {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.theme-selector li {
+    display: inline;
+    padding: 0.5em;
+    color: #fff;
+    font-size: large;
+}
+
+.theme-selector li:hover {
+    cursor: pointer;
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #000 !important;
+}
+
+.dark-mode {
+    background-color: #000;
+    color: #fff;
 }
 
 /* Footer Styles */

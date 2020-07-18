@@ -1,6 +1,6 @@
 // Global Variables
 
-const navbar = document.querySelector('ul');
+const navbar = document.querySelector('#navbar__list');
 const mainElement = document.querySelector('main');
 const loading = document.querySelector('.loader');
 
@@ -90,7 +90,7 @@ window.addEventListener('scroll', () => {
 
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    if (scrollTop + clientHeight >= scrollHeight - 100) {
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
         showLoading();
     };
 });
@@ -99,3 +99,11 @@ window.addEventListener('scroll', () => {
 
 
 // go to begin button
+
+
+// toggle dark-mode / light-mode
+
+const toggleTheme = () => {
+    document.querySelector('body').classList.toggle();
+};
+
