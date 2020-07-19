@@ -27,11 +27,17 @@ body {
 body.light-mode {
     background-color: #fff;
     color: #000;
+    transition: ease 0.3s all;
 }
 
 body.dark-mode {
     background-color: #000;
     color: #fff;
+    transition: ease 0.3s all;
+}
+
+.active-mode {
+    text-transform: underline;
 }
 
 /* Typeography General*/
@@ -113,8 +119,9 @@ section {
 }
 
 .add-section-button:hover {
-    color: #fff;
+    cursor: pointer;
     transition: ease 0.3s all;
+    text-decoration: underline;
 }
 
 /* Header Styles */
@@ -143,12 +150,12 @@ section {
     cursor: pointer;
 }
 
-.light-mode {
+.button-light-mode {
     background-color: #fff;
     color: #000 !important;
 }
 
-.dark-mode {
+.button-dark-mode {
     background-color: #000;
     color: #fff;
 }
