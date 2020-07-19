@@ -106,6 +106,17 @@ section {
     transition: ease 0.3s all;
 }
 
+.add-section-button {
+    color: orange;
+    padding: 1em;
+    font-weight: bold;
+}
+
+.add-section-button:hover {
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
 /* Header Styles */
 .page__header {
     background: #000;
