@@ -256,6 +256,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 section.active-section div {
+    transition: ease 0.3s all;
     background: linear-gradient(0deg, #b0bec5, #607d8b);
 }
 
