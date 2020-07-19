@@ -7,6 +7,8 @@ const addSectionButton = document.querySelector('.add-section-button');
 const bodyTag = document.querySelector('body');
 const buttonLightMode = document.querySelector('.button-light-mode')
 const buttonDarkMode = document.querySelector('.button-dark-mode')
+const activeSection = document.querySelector('.target')
+const allSections = document.querySelectorAll('section')
 
 const loremIpsumString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
 const aliquamString = 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.';
@@ -109,6 +111,27 @@ addSectionButton.addEventListener('click', function() {appendSection()});
 
 // check if section is active (in viewport and closest to top)
 
+const isInViewport = function(e) {
+    const bounding = e.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom - 100 <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
+
+window.addEventListener('scroll', function() {
+
+    for (section of allSections) {
+        if (isInViewport(section)) {
+            section.classList.add('active-section')
+        } else {
+            section.classList.remove('active-section')
+        }
+    }
+});
+
 
 // go to begin button
 
@@ -122,8 +145,6 @@ const activateDarkMode = () => {
 const activateLightMode = () => {
     bodyTag.className = 'light-mode'
 };
-
-// event listener for dark-mode / light-mode
 
 buttonDarkMode.addEventListener('click', function() {activateDarkMode();})
 buttonLightMode.addEventListener('click', function () {activateLightMode();})

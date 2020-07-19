@@ -255,11 +255,11 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-section.your-active-class div {
+section.active-section div {
     background: linear-gradient(0deg, #b0bec5, #607d8b);
 }
 
-section.your-active-class p,
-section.your-active-class h2 {
+section.active-section p,
+section.active-section h2 {
     color: #fff;
 }
