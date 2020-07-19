@@ -1,4 +1,5 @@
 @import "css-modules/loader.css";
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
 
 /*
  *
@@ -36,17 +37,12 @@ body.dark-mode {
     transition: ease 0.3s all;
 }
 
-.active-mode {
-    text-transform: underline;
-}
-
 /* Typeography General*/
 h1 {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Chelsea Market', cursive;
     font-size: 3em;
     margin: 2em 1rem;
-    background-color: #607d8b;
-    color: #fff;
+    color: #607d8b;
     padding: 10px;
 }
 
@@ -60,7 +56,7 @@ h1 {
 
 h2 {
     border-bottom: 1px solid #b0bec5;
-    font-family: 'Oxygen', Sans-Serif;
+    font-family: 'Chelsea Market', cursive;
     font-size: 3em;
     color: #b0bec5;
 }
@@ -102,18 +98,18 @@ section {
 }
 
 .navbar__menu a {
-    color: #fff;
+    color: #b0bec5;
     padding: 1em;
     font-weight: bold;
 }
 
 .navbar__menu a:hover {
-    color: orange;
+    color: #fff;
     transition: ease 0.3s all;
 }
 
 .add-section-button {
-    color: orange;
+    color: #FF7F50;
     padding: 1em;
     font-weight: bold;
 }
@@ -222,42 +218,18 @@ section:nth-of-type(even) .landing__container::before {
     transition: ease 0.5s all;
 }
 
-section:nth-of-type(3n) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -5;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n + 1) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
-    position: absolute;
-    right: 20vw;
-    bottom: -5em;
-    z-index: -5;
-    width: 15vh;
-    height: 15vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 section.active-section div {
-    transition: ease 0.3s all;
-    background: linear-gradient(0deg, #b0bec5, #607d8b);
+    /* background: linear-gradient(0deg, #b0bec5, #607d8b); */
+    background-color: #607d8b;
+    border-radius: 0.5em;
+    transition: ease 1s all;
+    box-shadow: 1px 1px 0 #b0bec5,
+    0 0 20px 5px #cfd8dc,
+    inset 2px 2px 0 #eceff1;
+    animation: glow 2s infinite ease;
 }
 
 section.active-section p,
