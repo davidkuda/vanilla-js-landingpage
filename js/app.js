@@ -140,4 +140,5 @@ buttonLightMode.addEventListener('click', function () {
  * - Scroll to new section upon creation
  * - Go To Beginning of page
  * - finish "infinite scrolling"
+ * - add collapse feature / accordeon
 */
