@@ -65,7 +65,7 @@ const appendSection = () => {
 
 // show / hide loader at the bottom of the page
 
-const showLoading = () => {
+// const showLoading = () => {
 
     loading.classList.add('show')
 

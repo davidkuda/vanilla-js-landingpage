@@ -1,5 +1,6 @@
 @import "css-modules/loader.css";
 @import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+@import "components/footer_style.css";
 
 /*
  *
@@ -157,14 +158,22 @@ section {
 }
 
 /* Footer Styles */
-.page__footer {
-    background: #000;
+footer {
+    margin-top: 2em;
+    background-color: #000;
     padding: 3em;
     color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: large;
+    flex-flow: column wrap;
 }
 
-.page__footer p{
-    color: #fff;
+.icon-container img {
+    height: 40px;
+    padding-bottom: 3em;
 }
 
 
