@@ -232,8 +232,6 @@ section:nth-of-type(even) .landing__container::before {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 section.active-section div {
-    /* background: linear-gradient(0deg, #b0bec5, #607d8b); */
-    background-color: #607d8b;
     border-radius: 0.5em;
     transition: ease 1s all;
     box-shadow: 1px 1px 0 #b0bec5,
