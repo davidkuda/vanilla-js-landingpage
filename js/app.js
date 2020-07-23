@@ -53,7 +53,6 @@ const stringNewSection = `
         <div class="landing__container">
             <h2>Section ${sectionCounter}</h2>
             <p>${loremIpsumString}</p>
-            <p>${aliquamString}</p>
         </div>
     </section>`;
 
@@ -70,9 +69,9 @@ const increaseSectionCounter = () => {
 const isInViewport = function (e) {
     const bounding = e.getBoundingClientRect();
     return (
-        bounding.top >= -300 &&
+        bounding.top >= -400 &&
         bounding.left >= 0 &&
-        bounding.bottom - 300 <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.bottom - 400 <= (window.innerHeight || document.documentElement.clientHeight) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 };
