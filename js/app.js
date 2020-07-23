@@ -69,9 +69,9 @@ const increaseSectionCounter = () => {
 const isInViewport = function (e) {
     const bounding = e.getBoundingClientRect();
     return (
-        bounding.top >= -400 &&
+        bounding.top >= -360 &&
         bounding.left >= 0 &&
-        bounding.bottom - 400 <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.bottom - 360 <= (window.innerHeight || document.documentElement.clientHeight) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 };
@@ -83,16 +83,6 @@ const isInViewport = function (e) {
  * 
 */
 
-const installNavItems = () => {
-
-    const stringNewNavLi = `
-        <a href="#section1"><li>section 1</li></a>
-        <a href="#section2"><li>section 2</li></a>
-        <a href="#section3"><li>section 3</li></a>`;
-
-    navbar.insertAdjacentHTML('afterbegin', stringNewNavLi);
-
-}
 
 const appendSection = () => {
     appendNewNavLi();
@@ -122,7 +112,7 @@ window.addEventListener('scroll', function () {
     for (section of initialSections) {
         if (isInViewport(section)) {
             if (document.getElementById(`navigation-section-${section.dataset.nav.slice(8,9)}`)) {
-                console.log('this is true')
+
             } else {
                 const stringNewNavLiSpecific = `<a href="#section1"><li id="navigation-section-${section.dataset.nav.slice(8,9)}">${section.dataset.nav}</li></a>`;
                 navbar.insertAdjacentHTML('beforeend', stringNewNavLiSpecific);
@@ -142,21 +132,19 @@ addSectionButton.addEventListener('click', function () {
 window.addEventListener('scroll', function () {
 
     for (section of allSections) {
+
+        const activeNavLi = document.getElementById(`navigation-section-${section.dataset.nav.slice(8, 9)}`);
+
         if (isInViewport(section)) {
-            section.classList.add('active-section')
+            section.classList.add('active-section');
+            activeNavLi.className = 'active-section';
+
         } else {
-            section.classList.remove('active-section')
+            section.classList.remove('active-section');
+            activeNavLi.className = '';
         }
     }
 });
-
-// activate or deactivate dark-mode / light-mode
-buttonDarkMode.addEventListener('click', function () {
-    activateDarkMode();
-})
-buttonLightMode.addEventListener('click', function () {
-    activateLightMode();
-})
 
 
 /**

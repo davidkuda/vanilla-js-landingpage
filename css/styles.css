@@ -148,16 +148,6 @@ button.add-section-button {
     cursor: pointer;
 }
 
-.button-light-mode {
-    background-color: #fff;
-    color: #000 !important;
-}
-
-.button-dark-mode {
-    background-color: #000;
-    color: #fff;
-}
-
 /* Footer Styles */
 footer {
     margin-top: 2em;
@@ -231,6 +221,17 @@ section:nth-of-type(even) .landing__container::before {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
+
+nav li.active-section {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    transition: ease 1s all;
+    box-shadow: 1px 1px 0 #b0bec5,
+    0 0 20px 5px #cfd8dc,
+    inset 2px 2px 0 #eceff1;
+    animation: glow 2s infinite ease;
+}
+
 section.active-section div {
     border-radius: 0.5em;
     transition: ease 1s all;
