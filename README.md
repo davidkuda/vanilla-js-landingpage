@@ -1,4 +1,4 @@
-#Dynamically Adding Content to a Website
+# Dynamically Adding Content to a Website
 
 This landing page is based on the *second project of Udacity's "Front End Web Developer Nanodegree Program".*
 
