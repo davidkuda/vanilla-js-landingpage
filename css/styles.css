@@ -1,6 +1,5 @@
 @import "css-modules/loader.css";
 @import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
-@import "components/footer_style.css";
 
 /*
  *
@@ -109,10 +108,19 @@ section {
     transition: ease 0.3s all;
 }
 
-.add-section-button {
-    color: #FF7F50;
-    padding: 1em;
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.add-section-button {
+    background-color: #FF7F50;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 1em;
     font-weight: bold;
+    border: 0;
 }
 
 .add-section-button:hover {
@@ -123,7 +131,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #000;
+    background: #000000ae;
     position: fixed;
     top: 0;
     width: 100%;
