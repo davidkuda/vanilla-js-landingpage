@@ -218,7 +218,8 @@ window.addEventListener('scroll', function() {
             navTargetNum = navbarChild.id.slice(19);
             navTarget = 'section' + navTargetNum
             window.scroll({
-                
+                top: navbarChild.getBoundingClientRect().top,
+                behavior: "smooth"
             })
         })
     }
