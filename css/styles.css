@@ -116,9 +116,8 @@ button.add-section-button {
 .add-section-button:hover {
     cursor: pointer;
     transition: ease 0.2s all;
-    box-shadow: 1px 1px 0 #b0bec5,
-    0 0 20px 5px #cfd8dc,
-    inset 2px 2px 0 #eceff1;
+    box-shadow: 0 0 20px 5px #cfd8dc,
+    inset 1px 1px 0 #FF7F50;
     animation: glow 2s infinite ease;
 }
 
@@ -173,11 +172,10 @@ button.add-section-button {
 }
 
 
-.go-to-top-arrow:hover {
+.go-to-top-button:hover {
     transition: ease 0.2s all;
-    box-shadow: 1px 1px 0 #b0bec5,
-    0 0 20px 5px #cfd8dc,
-    inset 2px 2px 0 #eceff1;
+    box-shadow: 0 0 20px 5px #cfd8dc,
+    inset 1px 1px 0 #FF7F50;
     animation: glow 2s infinite ease;
 }
 
