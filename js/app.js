@@ -41,8 +41,8 @@ let sectionCounter = 4;
 */
 
 const appendNewNavLi = () => {
-
-    const stringNewNavLi = `<a href="#section${sectionCounter}"><li>section ${sectionCounter}</li></a>`;
+    
+    const stringNewNavLi = `<li id="navigation-section-${sectionCounter}">section ${sectionCounter}</li>`;
     navbar.insertAdjacentHTML('beforeend', stringNewNavLi);
 }
 
@@ -114,7 +114,7 @@ window.addEventListener('scroll', function () {
             if (document.getElementById(`navigation-section-${section.dataset.nav.slice(8,9)}`)) {
 
             } else {
-                const stringNewNavLiSpecific = `<a href="#section1"><li id="navigation-section-${section.dataset.nav.slice(8,9)}">${section.dataset.nav}</li></a>`;
+                const stringNewNavLiSpecific = `<li id="navigation-section-${section.dataset.nav.slice(8,9)}">${section.dataset.nav}</li></a>`;
                 navbar.insertAdjacentHTML('beforeend', stringNewNavLiSpecific);
             }
         }
