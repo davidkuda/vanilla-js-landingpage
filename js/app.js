@@ -100,10 +100,9 @@ const goToTop = () => {
 // scroll to section 3
 
 const goToMostRecentSection = () => {
-    const mostRecentSection = document.getElementById(`section${sectionCounter-1}`);
-    window.scroll({
-        top: mostRecentSection.getBoundingClientRect().top,
-        left: 0,
+    let mostRecentSection = document.getElementById(`section${mainElement.children.length - 1}`);
+    window.scrollBy({
+        top: -mostRecentSection.getBoundingClientRect().height * 0.8,
         behavior: 'smooth'
     })
 }
@@ -123,7 +122,7 @@ const appendSection = () => {
 
 // smooth scrolling function
 
-const smoothScroll = function (scrollTarget, duration) {
+const smoothScroll = function(scrollTarget, duration) {
     const fTarget = document.getElementById(scrollTarget);
     const fTargetPosition = fTarget.getBoundingClientRect().top;
     const startPosition = window.pageYOffset;
@@ -172,6 +171,7 @@ window.addEventListener('scroll', function () {
 
 addSectionButton.addEventListener('click', function () {
     appendSection();
+    goToMostRecentSection();
 });
 
 // highlight active section
@@ -212,11 +212,18 @@ goToTopButton.addEventListener('click', function() {
 
 // apply smooth scroll to navbar links
 
-for (navbarChild of navbar.children) {
-    navbarChild.addEventListener('click', function() {
-        console.log('hello!')
-    })
-};
+window.addEventListener('scroll', function() {
+    for (navbarChild of navbar.children) {
+        navbarChild.addEventListener('click', function() {
+            navTargetNum = navbarChild.id.slice(19);
+            navTarget = 'section' + navTargetNum
+            window.scroll({
+                
+            })
+        })
+    }
+});
+
 
 /**
  * End Events
