@@ -37,6 +37,7 @@ h1 {
     margin: 2em 1rem;
     color: #fff;
     padding: 10px;
+    letter-spacing: 2px;
 }
 
 @media only screen and (min-width: 35em){
@@ -52,6 +53,7 @@ h2 {
     font-family: 'Chelsea Market', cursive;
     font-size: 3em;
     color: #b0bec5;
+    letter-spacing: 8px;
 }
 
 p {
@@ -113,7 +115,6 @@ button.add-section-button {
 
 .add-section-button:hover {
     cursor: pointer;
-    border-radius: 0.5em;
     transition: ease 0.2s all;
     box-shadow: 1px 1px 0 #b0bec5,
     0 0 20px 5px #cfd8dc,
@@ -148,6 +149,38 @@ button.add-section-button {
 }
 
 /* Footer Styles */
+
+.go-to-top-button {
+    position: fixed;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    background-color: #FF7F50;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s;
+    font-size: 18px;
+}
+
+.visible {
+    opacity: 1;
+}
+
+
+.go-to-top-arrow:hover {
+    transition: ease 0.2s all;
+    box-shadow: 1px 1px 0 #b0bec5,
+    0 0 20px 5px #cfd8dc,
+    inset 2px 2px 0 #eceff1;
+    animation: glow 2s infinite ease;
+}
+
 footer {
     margin-top: 2em;
     background-color: #000;
@@ -165,7 +198,6 @@ footer {
     height: 40px;
     padding-bottom: 3em;
 }
-
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
@@ -187,36 +219,6 @@ section:nth-of-type(even) .landing__container {
     text-align: right; 
 }
 
-/* Background Circles */
-/* Note that background circles are created with psuedo elements before and after */
-/* Circles appear to be random do to use of :nth-of-type psuedo class */
-section:nth-of-type(odd) .landing__container::before {
-    content: '';
-    background: rgba(255, 255, 255, 0.187);
-    position: absolute;
-    z-index: -5;
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(even) .landing__container::before {
-    content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
-    position: absolute;
-    top: 3em;
-    right: 3em;
-    z-index: -5;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
@@ -232,14 +234,6 @@ nav li.active-section {
         0 0 90px #0ff,
         0 0 100px #0ff,
         0 0 150px #0ff;
-
-    /* border-radius: 0.5em;
-    padding: 0.5em;
-    transition: ease 1s all;
-    box-shadow: 1px 1px 0 #b0bec5,
-    0 0 20px 5px #cfd8dc,
-    inset 2px 2px 0 #eceff1;
-    animation: glow 2s infinite ease; */
 }
 
 section.active-section div {
