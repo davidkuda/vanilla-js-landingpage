@@ -41,7 +41,7 @@ let sectionCounter = 4;
 */
 
 const appendNewNavLi = () => {
-    
+
     const stringNewNavLi = `<li id="navigation-section-${sectionCounter}">section ${sectionCounter}</li>`;
     navbar.insertAdjacentHTML('beforeend', stringNewNavLi);
 }
@@ -69,9 +69,9 @@ const increaseSectionCounter = () => {
 const isInViewport = function (e) {
     const bounding = e.getBoundingClientRect();
     return (
-        bounding.top >= -360 &&
+        bounding.top >= -320 &&
         bounding.left >= 0 &&
-        bounding.bottom - 360 <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.bottom - 320 <= (window.innerHeight || document.documentElement.clientHeight) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 };

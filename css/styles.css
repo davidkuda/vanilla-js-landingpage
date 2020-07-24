@@ -27,7 +27,7 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 0;
     font-family: 'Merriweather', serif;
-    color: #b0bec5;
+    color: #fff;
 }
 
 /* Typeography General*/
@@ -35,7 +35,7 @@ h1 {
     font-family: 'Chelsea Market', cursive;
     font-size: 3em;
     margin: 2em 1rem;
-    color: #607d8b;
+    color: #fff;
     padding: 10px;
 }
 
@@ -88,17 +88,12 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+    margin: 0.1em 1em;
+    padding: 0.2em;
 }
 
-.navbar__menu a {
-    color: #b0bec5;
-    padding: 1em;
-    font-weight: bold;
-}
-
-.navbar__menu a:hover {
-    color: #fff;
-    transition: ease 0.3s all;
+.navbar__menu li:hover {
+    cursor: pointer;
 }
 
 .button-container {
@@ -118,8 +113,12 @@ button.add-section-button {
 
 .add-section-button:hover {
     cursor: pointer;
-    transition: ease 0.3s all;
-    text-decoration: underline;
+    border-radius: 0.5em;
+    transition: ease 0.2s all;
+    box-shadow: 1px 1px 0 #b0bec5,
+    0 0 20px 5px #cfd8dc,
+    inset 2px 2px 0 #eceff1;
+    animation: glow 2s infinite ease;
 }
 
 /* Header Styles */
@@ -223,13 +222,24 @@ section:nth-of-type(even) .landing__container::before {
 /* Section Active Styles */
 
 nav li.active-section {
-    border-radius: 0.5em;
+
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #0ff,
+        0 0 80px #0ff,
+        0 0 90px #0ff,
+        0 0 100px #0ff,
+        0 0 150px #0ff;
+
+    /* border-radius: 0.5em;
     padding: 0.5em;
     transition: ease 1s all;
     box-shadow: 1px 1px 0 #b0bec5,
     0 0 20px 5px #cfd8dc,
     inset 2px 2px 0 #eceff1;
-    animation: glow 2s infinite ease;
+    animation: glow 2s infinite ease; */
 }
 
 section.active-section div {
