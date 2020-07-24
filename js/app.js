@@ -28,7 +28,7 @@ const buttonDarkMode = document.querySelector('.button-dark-mode');
 const activeSection = document.querySelector('.target');
 const allSections = document.getElementsByTagName('section');
 const initialSections = document.querySelectorAll('section');
-const goToTopButton = document.querySelector('.go-to-top-button')
+const goToTopButton = document.querySelector('.go-to-top-button');
 
 const loremIpsumString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
 const aliquamString = 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.';
@@ -97,6 +97,17 @@ const goToTop = () => {
     })
 }
 
+// scroll to section 3
+
+const goToMostRecentSection = () => {
+    const mostRecentSection = document.getElementById(`section${sectionCounter-1}`);
+    window.scroll({
+        top: mostRecentSection.getBoundingClientRect().top,
+        left: 0,
+        behavior: 'smooth'
+    })
+}
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -109,6 +120,31 @@ const appendSection = () => {
     appendNewSection();
     increaseSectionCounter();
 }
+
+// smooth scrolling function
+
+const smoothScroll = function (scrollTarget, duration) {
+    const fTarget = document.getElementById(scrollTarget);
+    const fTargetPosition = fTarget.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const distance = fTargetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) { startTime = currentTime; };
+        let timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+        t /= d;
+        return c * t * t + b;
+    };
+
+    requestAnimationFrame(animation)
+};
 
 /**
  * End Main Functions
@@ -135,7 +171,7 @@ window.addEventListener('scroll', function () {
 // append a new section upon button click
 
 addSectionButton.addEventListener('click', function () {
-    appendSection()
+    appendSection();
 });
 
 // highlight active section
@@ -174,15 +210,18 @@ goToTopButton.addEventListener('click', function() {
     goToTop();
 })
 
+// apply smooth scroll to navbar links
+
+for (navbarChild of navbar.children) {
+    navbarChild.addEventListener('click', function() {
+        console.log('hello!')
+    })
+};
 
 /**
  * End Events
  * 
  * Ideas for further development:
  * 
- * - Highlight section in navigation
  * - Scroll to new section upon creation
- * - Go To Beginning of page
- * - finish "infinite scrolling"
- * - add collapse feature / accordeon
 */
