@@ -18,17 +18,18 @@
  * 
 */
 
-const navbar = document.querySelector('#navbar__list');
-const mainElement = document.querySelector('main');
-const loading = document.querySelector('.loader');
-const addSectionButton = document.querySelector('.add-section-button');
-const bodyTag = document.querySelector('body');
-const buttonLightMode = document.querySelector('.button-light-mode');
-const buttonDarkMode = document.querySelector('.button-dark-mode');
-const activeSection = document.querySelector('.target');
-const allSections = document.getElementsByTagName('section');
-const initialSections = document.querySelectorAll('section');
-const goToTopButton = document.querySelector('.go-to-top-button');
+const 
+    navbar = document.querySelector('#navbar__list'),
+    mainElement = document.querySelector('main'),
+    loading = document.querySelector('.loader'),
+    addSectionButton = document.querySelector('.add-section-button'),
+    bodyTag = document.querySelector('body'),
+    buttonLightMode = document.querySelector('.button-light-mode'),
+    buttonDarkMode = document.querySelector('.button-dark-mode'),
+    activeSection = document.querySelector('.target'),
+    allSections = document.getElementsByTagName('section'),
+    initialSections = document.querySelectorAll('section'),
+    goToTopButton = document.querySelector('.go-to-top-button');
 
 const loremIpsumString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
 const aliquamString = 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.';
@@ -101,11 +102,9 @@ const goToTop = () => {
 
 const goToMostRecentSection = () => {
     let mostRecentSection = document.getElementById(`section${mainElement.children.length - 1}`);
-    window.scrollBy({
-        top: -mostRecentSection.getBoundingClientRect().height * 0.8,
-        behavior: 'smooth'
-    })
-}
+    mostRecentSection.scrollIntoView({ behavior: "smooth" });
+};
+
 
 /**
  * End Helper Functions
@@ -120,30 +119,6 @@ const appendSection = () => {
     increaseSectionCounter();
 }
 
-// smooth scrolling function
-
-const smoothScroll = function(scrollTarget, duration) {
-    const fTarget = document.getElementById(scrollTarget);
-    const fTargetPosition = fTarget.getBoundingClientRect().top;
-    const startPosition = window.pageYOffset;
-    const distance = fTargetPosition - startPosition;
-    let startTime = null;
-
-    function animation(currentTime) {
-        if (startTime === null) { startTime = currentTime; };
-        let timeElapsed = currentTime - startTime;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    function ease(t, b, c, d) {
-        t /= d;
-        return c * t * t + b;
-    };
-
-    requestAnimationFrame(animation)
-};
 
 /**
  * End Main Functions
@@ -212,24 +187,14 @@ goToTopButton.addEventListener('click', function() {
 
 // apply smooth scroll to navbar links
 
-window.addEventListener('scroll', function() {
-    for (navbarChild of navbar.children) {
-        navbarChild.addEventListener('click', function() {
-            navTargetNum = navbarChild.id.slice(19);
-            navTarget = 'section' + navTargetNum
-            window.scroll({
-                top: navbarChild.getBoundingClientRect().top,
-                behavior: "smooth"
-            })
-        })
-    }
+navbar.addEventListener("click", function (e) {
+  if (e.target.nodeName === "LI") {
+    const splitId = e.target.id.split("-");
+    const targetSection = document.querySelector(`#section${splitId[2]}`);
+    targetSection.scrollIntoView({ behavior: "smooth" });
+  }
 });
-
 
 /**
  * End Events
- * 
- * Ideas for further development:
- * 
- * - Scroll to new section upon creation
 */
