@@ -35,6 +35,11 @@ h1 {
     padding: 10px;
 }
 
+h1 span.subtitle {
+    font-size: 0.5em;
+    font-weight: 300;
+}
+
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
@@ -86,7 +91,7 @@ section {
     display: inline-block;
     margin: 0.1em 1em;
     padding: 0.2em;
-    color: #888;
+    color: #aaa;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 }
@@ -106,7 +111,7 @@ button.add-section-button {
     color: #fff;
     padding: 1em 2em;
     border-radius: 1em;
-    font-weight: bold;
+    font-size: 1.2em;
     border: 0;
 }
 
@@ -209,17 +214,20 @@ section:nth-of-type(even) .landing__container {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 
-nav li.active-section {
+h1.active-section {
 
-    color: #000;
+    color: #fff;
     text-shadow: 0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 40px #0ff,
-        0 0 80px #0ff,
-        0 0 90px #0ff,
-        0 0 100px #0ff,
-        0 0 150px #0ff;
+        0 0 80px #fff,
+        0 0 90px #fff,
+        0 0 100px #2C5364,
+        0 0 150px #2C5364;
+    animation: glow 2s infinite ease;
+}
+
+nav li.active-section {
+    color: #2C5364;
+    animation: glow 2s infinite ease;
 }
 
 section.active-section div {

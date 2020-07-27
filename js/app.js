@@ -177,7 +177,7 @@ window.addEventListener('scroll', function() {
     } else if (scrollPosition < 400) {
         hideGoToTop();
     }
-})
+});
 
 // apply "go to top" on button
 
